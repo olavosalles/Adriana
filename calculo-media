@@ -1,0 +1,47 @@
+Algoritmo "media"
+var
+   P1, E1, E2, X, SUB, API, EXF : real
+   mediaAvaliacoes, trava, componente1, resultadoIntermediario, notaFinal : real
+
+inicio
+   // Leitura das notas
+   escreva("Digite a nota da P1: ")
+   leia(P1)
+   escreva("Digite a nota da E1: ")
+   leia(E1)
+   escreva("Digite a nota da E2: ")
+   leia(E2)
+   escreva("Digite a nota de X (Atividades extras): ")
+   leia(X)
+   escreva("Digite a nota da SUB: ")
+   leia(SUB)
+   escreva("Digite a nota da API: ")
+   leia(API)
+   escreva("Digite a nota do EXF (Exame Final): ")
+   leia(EXF)
+
+   // Cálculo da média base das avaliações: (P1*0.5 + E1*0.2 + E2*0.3 + X + SUB*0.15)
+   mediaAvaliacoes <- (P1 * 0.5) + (E1 * 0.2) + (E2 * 0.3) + X + (SUB * 0.15)
+
+   // Verificação da trava condicional: max(mediaAvaliacoes - 5.9, 0)
+   se (mediaAvaliacoes - 5.9) > 0 entao
+      trava <- (mediaAvaliacoes - 5.9) / (mediaAvaliacoes - 5.9) // Resulta em 1
+   senao
+      trava <- 0
+   fimse
+
+   // Cálculo da primeira parte dentro do MAX da fórmula
+   componente1 <- (mediaAvaliacoes * 0.5) + (trava * API * 0.5)
+
+   // Comparação final equivalente ao max(componente1, EXF)
+   se componente1 > EXF entao
+      notaFinal <- componente1
+   senao
+      notaFinal <- EXF
+   fimse
+
+   escreval("")
+   escreval("=========================")
+   escreval("Nota Final: ", notaFinal:2:2)
+   escreval("=========================")
+fimalgoritmo
