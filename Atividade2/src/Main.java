@@ -46,5 +46,25 @@ public class Main {
         mascara.colocar();
         mascara.retirar();
         System.out.println();
+
+        Artista artista = new Artista("Mauricio", "Brasileiro", 67);
+        artista.esculpirMascara();
+        artista.pintarMascara();
+        artista.exibirInformacoes();
+        System.out.println();
+
+        Tribo tribo = new Tribo("Zulu", "África do Sul", "IsiZulu");
+        tribo.produzirMascara();
+        tribo.realizarDanca();
+        tribo.exibirInformacoes();
+        System.out.println();
+
+    // Testes imagem 4
+        Manga manga = new Manga("Naruto", "Ação", 700);
+        manga.publicar();
+        manga.adicionarCapitulo();
+        manga.exibirInformacoes();
+        System.out.println();
+
     }
 }
