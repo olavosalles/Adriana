@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-    // Testes da imagem 1
+        // Testes da imagem 1
         System.out.println("\n----------------------------------------");
         Camisa camisa = new Camisa("Azul", "M", 89.90);
         camisa.vestir();
@@ -19,7 +19,7 @@ public class Main {
         terno.vestir();
         terno.exibirInformacoes();
 
-    // Testes da imagem 2
+        // Testes da imagem 2
         System.out.println("\n----------------------------------------");
         Bicicleta bicicleta = new Bicicleta("Preta", "Caloi", 949.00);
         bicicleta.pedalar();
@@ -36,7 +36,7 @@ public class Main {
         arvore.produzirFrutos();
         arvore.infArvore();
 
-    // Testes imagem 3
+        // Testes imagem 3
         System.out.println("\n----------------------------------------");
         Mascara mascara = new Mascara("Marrom", "G", "Circular");
         mascara.limpar();
@@ -54,7 +54,7 @@ public class Main {
         tribo.exibirInformacoes();
 
 
-    // Testes imagem 4
+        // Testes imagem 4
         System.out.println("\n----------------------------------------");
         Manga manga = new Manga("Naruto", "Ação", 700);
         manga.publicar();
