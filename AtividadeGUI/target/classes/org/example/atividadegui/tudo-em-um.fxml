@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="580.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atividadegui.MainViewController">
+  <tabs>
+    <!-- ABA 1: MULTIPLO -->
+    <Tab text="1. Múltiplo">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="12.0">
+               <children>
+                  <Label text="Digite o primeiro número:">
+                     <font>
+                        <Font name="SansSerif Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtMultiploN1" promptText="Ex: 10" />
+                  <Label text="Digite o segundo número:">
+                     <font>
+                        <Font name="SansSerif Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtMultiploN2" promptText="Ex: 2" />
+                  <Button mnemonicParsing="false" onAction="#onCalcularMultiplo" text="Verificar Múltiplo">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lblResultadoMultiplo">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+    </Tab>
+
+    <!-- ABA 2: LOGIN -->
+    <Tab text="2. Login">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="12.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="Digite sua senha:">
+                     <font>
+                        <Font name="SansSerif Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSenhaLogin" promptText="Ex: 1234" />
+                  <Button mnemonicParsing="false" onAction="#onEntrarLogin" text="Entrar">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lblResultadoLogin">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </content>
+    </Tab>
+
+    <!-- ABA 3: DESCONTO -->
+    <Tab text="3. Desconto">
+      <content>
+         <VBox spacing="12.0">
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+               <Button mnemonicParsing="false" onAction="#onCalcularDesconto" text="Calcular Compra com Desconto">
+                  <font>
+                     <Font name="SansSerif Regular" size="14.0" />
+                  </font>
+               </Button>
+               <TextArea fx:id="txtAreaDesconto" editable="false" prefHeight="330.0" prefWidth="540.0">
+                  <font>
+                     <Font name="Monospaced Regular" size="13.0" />
+                  </font>
+               </TextArea>
+            </children>
+         </VBox>
+      </content>
+    </Tab>
+
+    <!-- ABA 4: TEMPERATURA -->
+    <Tab text="4. Temperatura">
+      <content>
+         <VBox spacing="12.0">
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+               <Label text="Qual a temperatura em graus Celsius (°C)?">
+                  <font>
+                     <Font name="SansSerif Regular" size="16.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="txtTemperatura" promptText="Ex: 22.5" />
+               <Button mnemonicParsing="false" onAction="#onVerificarTemperatura" text="Verificar Clima">
+                  <font>
+                     <Font name="SansSerif Regular" size="14.0" />
+                  </font>
+               </Button>
+               <Label fx:id="lblResultadoTemperatura">
+                  <font>
+                     <Font name="SansSerif Bold" size="16.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+      </content>
+    </Tab>
+
+    <!-- ABA 5: CAMELOS -->
+    <Tab text="5. Camelos">
+      <content>
+         <VBox spacing="12.0">
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+               <Button mnemonicParsing="false" onAction="#onCalcularCamelos" text="Resolver Enigma dos 35 Camelos">
+                  <font>
+                     <Font name="SansSerif Regular" size="14.0" />
+                  </font>
+               </Button>
+               <TextArea fx:id="txtAreaCamelos" editable="false" prefHeight="330.0" prefWidth="540.0">
+                  <font>
+                     <Font name="SansSerif Regular" size="14.0" />
+                  </font>
+               </TextArea>
+            </children>
+         </VBox>
+      </content>
+    </Tab>
+
+    <!-- ABA 6: VIAGEM -->
+    <Tab text="6. Viagem">
+      <content>
+         <VBox spacing="12.0">
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+               <Label text="Distância da viagem (em Km):">
+                  <font>
+                     <Font name="SansSerif Regular" size="16.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="txtViagemDistancia" promptText="Ex: 550" />
+               <Label text="Preço do combustível (R$):">
+                  <font>
+                     <Font name="SansSerif Regular" size="16.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="txtViagemPreco" promptText="Ex: 5.89" />
+               <Button mnemonicParsing="false" onAction="#onCalcularViagem" text="Calcular Custo da Viagem">
+                  <font>
+                     <Font name="SansSerif Regular" size="14.0" />
+                  </font>
+               </Button>
+               <Label fx:id="lblResultadoViagem">
+                  <font>
+                     <Font name="SansSerif Bold" size="16.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+      </content>
+    </Tab>
+
+    <!-- ABA 7: ALUGUEL -->
+    <Tab text="7. Aluguel">
+      <content>
+         <VBox spacing="12.0">
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+               <Label text="Quantos dias ficou com o carro?">
+                  <font>
+                     <Font name="SansSerif Regular" size="16.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="txtAluguelDias" promptText="Ex: 3" />
+               <Label text="Quantos Km percorreu?">
+                  <font>
+                     <Font name="SansSerif Regular" size="16.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="txtAluguelKm" promptText="Ex: 150" />
+               <Button mnemonicParsing="false" onAction="#onCalcularAluguel" text="Calcular Aluguel">
+                  <font>
+                     <Font name="SansSerif Regular" size="14.0" />
+                  </font>
+               </Button>
+               <Label fx:id="lblResultadoAluguel">
+                  <font>
+                     <Font name="SansSerif Bold" size="16.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
