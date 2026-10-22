@@ -1,3 +1,10 @@
+org\example\atividadegui\Camelo.class
+org\example\atividadegui\Aluguel.class
 org\example\atividadegui\MainViewController.class
+org\example\atividadegui\Viagem.class
 module-info.class
-org\example\atividadegui\HelloApplication.class
+org\example\atividadegui\Desconto.class
+org\example\atividadegui\Login.class
+org\example\atividadegui\Multiplo.class
+org\example\atividadegui\Application.class
+org\example\atividadegui\Temperatura.class

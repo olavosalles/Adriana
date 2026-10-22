@@ -1,12 +1,13 @@
 package org.example.atividadegui;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class MainViewController {
 
-
-    // MÚLTIPLO
+    // 1. MÚLTIPLO
     @FXML private TextField txtMultiploN1;
     @FXML private TextField txtMultiploN2;
     @FXML private Label lblResultadoMultiplo;
@@ -19,22 +20,18 @@ public class MainViewController {
 
             if (n2 == 0) {
                 lblResultadoMultiplo.setText("Divisão por zero não é permitida!");
-                lblResultadoMultiplo.setStyle("-fx-text-fill: red;");
             } else if (n1 % n2 == 0) {
                 lblResultadoMultiplo.setText("O número " + n1 + " é múltiplo de " + n2);
-                lblResultadoMultiplo.setStyle("-fx-text-fill: green;");
             } else {
                 lblResultadoMultiplo.setText("O número " + n1 + " NÃO é múltiplo de " + n2);
-                lblResultadoMultiplo.setStyle("-fx-text-fill: orange;");
             }
         } catch (Exception e) {
             lblResultadoMultiplo.setText("Digite números inteiros válidos!");
-            lblResultadoMultiplo.setStyle("-fx-text-fill: red;");
         }
     }
 
 
-    // LOGIN
+    // 2. LOGIN
     @FXML private TextField txtSenhaLogin;
     @FXML private Label lblResultadoLogin;
 
@@ -43,20 +40,17 @@ public class MainViewController {
         try {
             int senha = Integer.parseInt(txtSenhaLogin.getText().trim());
             if (senha == 1234) {
-                lblResultadoLogin.setText("✔ Acesso Permitido!");
-                lblResultadoLogin.setStyle("-fx-text-fill: green;");
+                lblResultadoLogin.setText("Acesso Permitido!");
             } else {
-                lblResultadoLogin.setText("✖ Acesso Negado!");
-                lblResultadoLogin.setStyle("-fx-text-fill: red;");
+                lblResultadoLogin.setText("Acesso Negado!");
             }
         } catch (Exception e) {
             lblResultadoLogin.setText("Digite apenas números!");
-            lblResultadoLogin.setStyle("-fx-text-fill: red;");
         }
     }
 
 
-    // COMPRA COM DESCONTO
+    // 3. COMPRA COM DESCONTO
     @FXML private TextArea txtAreaDesconto;
 
     @FXML
@@ -93,7 +87,7 @@ public class MainViewController {
     }
 
 
-    // TEMPERATURA
+    // 4. TEMPERATURA
     @FXML private TextField txtTemperatura;
     @FXML private Label lblResultadoTemperatura;
 
@@ -103,19 +97,16 @@ public class MainViewController {
             double temp = Double.parseDouble(txtTemperatura.getText().trim().replace(",", "."));
             if (temp > 18) {
                 lblResultadoTemperatura.setText("A temperatura em São José dos Campos está agradável!");
-                lblResultadoTemperatura.setStyle("-fx-text-fill: green;");
             } else {
                 lblResultadoTemperatura.setText("Está frio em São José dos Campos!");
-                lblResultadoTemperatura.setStyle("-fx-text-fill: blue;");
             }
         } catch (Exception e) {
             lblResultadoTemperatura.setText("Digite uma temperatura válida!");
-            lblResultadoTemperatura.setStyle("-fx-text-fill: red;");
         }
     }
 
 
-    //  CAMELOS
+    // 5. CAMELOS
     @FXML private TextArea txtAreaCamelos;
 
     @FXML
@@ -140,7 +131,7 @@ public class MainViewController {
     }
 
 
-    //  CALCULADORA DE VIAGEM
+    // 6. CALCULADORA DE VIAGEM
     @FXML private TextField txtViagemDistancia;
     @FXML private TextField txtViagemPreco;
     @FXML private Label lblResultadoViagem;
@@ -158,15 +149,13 @@ public class MainViewController {
             } else {
                 lblResultadoViagem.setText(String.format("Custo da viagem: R$ %.2f", gasto));
             }
-            lblResultadoViagem.setStyle("-fx-text-fill: green;");
         } catch (Exception e) {
             lblResultadoViagem.setText("Informe valores numéricos válidos!");
-            lblResultadoViagem.setStyle("-fx-text-fill: red;");
         }
     }
 
 
-    // ALUGUEL DE CARRO
+    // 7. ALUGUEL DE CARRO
     @FXML private TextField txtAluguelDias;
     @FXML private TextField txtAluguelKm;
     @FXML private Label lblResultadoAluguel;
@@ -186,10 +175,96 @@ public class MainViewController {
             }
 
             lblResultadoAluguel.setText(String.format("Valor total do aluguel: R$ %.2f", total));
-            lblResultadoAluguel.setStyle("-fx-text-fill: green;");
         } catch (Exception e) {
             lblResultadoAluguel.setText("Informe valores válidos!");
-            lblResultadoAluguel.setStyle("-fx-text-fill: red;");
         }
+    }
+
+
+    // 8. IMAGENS
+    @FXML private TextArea txtAreaImagens;
+
+    @FXML
+    protected void onImagem1() {
+
+        Camisa camisa = new Camisa("Azul", "M", 89.90);
+        Calca calca = new Calca("Preta", "G", 99.90);
+        Terno terno = new Terno("Azul escuro", "M", 250.00);
+
+        String texto = "IMAGEM 1: VESTUÁRIO\n\n" +
+                camisa.exibirInformacoes() + "\n" +
+                camisa.vestir() + "\n" +
+                camisa.lavar() + "\n\n" +
+                calca.exibirInformacoes() + "\n" +
+                calca.vestir() + "\n" +
+                calca.lavar() + "\n\n" +
+                terno.exibirInformacoes() + "\n" +
+                terno.vestir() + "\n" +
+                terno.abotoar();
+
+        txtAreaImagens.setText(texto);
+    }
+
+    @FXML
+    protected void onImagem2() {
+
+        Pessoa pessoa = new Pessoa("Masculino", "Castanho", 25);
+        Bicicleta bike = new Bicicleta("Vermelha", "Caloi", 1200.00);
+        Arvore arvore = new Arvore("Ipê", "Verde", 5.5);
+
+        String texto = "IMAGEM 2: PARQUE \n\n" +
+                pessoa.exibirInformacoes() + "\n" +
+                pessoa.pedalar() + "\n" +
+                pessoa.falar() + "\n\n" +
+                bike.exibirInformacoes() + "\n" +
+                bike.pedalar() + "\n" +
+                bike.acelerar() + "\n\n" +
+                arvore.exibirInformacoes() + "\n" +
+                arvore.crescer() + "\n" +
+                arvore.produzirFrutos();
+
+        txtAreaImagens.setText(texto);
+    }
+
+    @FXML
+    protected void onImagem3() {
+
+        Tribo tribo = new Tribo("Yanomami", "Amazônia", "Yanomami");
+        Mascara mascara = new Mascara("Madeira escura", "Médio", "Oval");
+        Artista artista = new Artista("Raimundo", "Brasileira", 42);
+
+        String texto = "IMAGEM 3: MASCARA\n\n" +
+                tribo.exibirInformacoes() + "\n" +
+                tribo.realizarDanca() + "\n" +
+                tribo.produzirMascara() + "\n\n" +
+                mascara.exibirInformacoes() + "\n" +
+                mascara.colocar() + "\n" +
+                mascara.limpar() + "\n\n" +
+                artista.exibirInformacoes() + "\n" +
+                artista.esculpirMascara() + "\n" +
+                artista.pintarMascara();
+
+        txtAreaImagens.setText(texto);
+    }
+
+    @FXML
+    protected void onImagem4() {
+
+        Manga manga = new Manga("Naruto", "Shonen", 700);
+        Personagem personagem = new Personagem("Naruto Uzumaki", 17, "Ninja");
+        Desenhista desenhista = new Desenhista("Masashi Kishimoto", "Mangaka", 25);
+
+        String texto = "IMAGEM 4: MANGÁ \n\n" +
+                manga.exibirInformacoes() + "\n" +
+                manga.publicar() + "\n" +
+                manga.adicionarCapitulo() + "\n\n" +
+                personagem.exibirInformacoes() + "\n" +
+                personagem.falar() + "\n" +
+                personagem.atacar() + "\n\n" +
+                desenhista.exibirInformacoes() + "\n" +
+                desenhista.desenhar() + "\n" +
+                desenhista.criarPersonagem();
+
+        txtAreaImagens.setText(texto);
     }
 }
