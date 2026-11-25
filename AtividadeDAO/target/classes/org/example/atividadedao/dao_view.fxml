@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atividadedao.controller.ImagensDAOController">
+   <children>
+      <TabPane prefHeight="650.0" prefWidth="760.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          
+          <!-- TAB 1: IMAGEM 1 (Vestuário) -->
+          <Tab text="Imagem 1: Vestuário">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="760.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="20.0" style="-fx-font-weight: bold;" text="1. Camisa" />
+                        <TextField fx:id="txtCamisaCor" layoutX="20.0" layoutY="45.0" prefWidth="90.0" promptText="Cor" />
+                        <TextField fx:id="txtCamisaTamanho" layoutX="120.0" layoutY="45.0" prefWidth="70.0" promptText="Tamanho" />
+                        <TextField fx:id="txtCamisaPreco" layoutX="200.0" layoutY="45.0" prefWidth="80.0" promptText="Preço R$" />
+                        <Button layoutX="290.0" layoutY="45.0" mnemonicParsing="false" onAction="#onSalvarCamisa" text="Cadastrar" />
+                        <Button layoutX="370.0" layoutY="45.0" mnemonicParsing="false" onAction="#onAtualizarCamisa" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="90.0" style="-fx-font-weight: bold;" text="2. Calça" />
+                        <TextField fx:id="txtCalcaCor" layoutX="20.0" layoutY="115.0" prefWidth="90.0" promptText="Cor" />
+                        <TextField fx:id="txtCalcaTamanho" layoutX="120.0" layoutY="115.0" prefWidth="70.0" promptText="Tamanho" />
+                        <TextField fx:id="txtCalcaPreco" layoutX="200.0" layoutY="115.0" prefWidth="80.0" promptText="Preço R$" />
+                        <Button layoutX="290.0" layoutY="115.0" mnemonicParsing="false" onAction="#onSalvarCalca" text="Cadastrar" />
+                        <Button layoutX="370.0" layoutY="115.0" mnemonicParsing="false" onAction="#onAtualizarCalca" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="160.0" style="-fx-font-weight: bold;" text="3. Terno" />
+                        <TextField fx:id="txtTernoCor" layoutX="20.0" layoutY="185.0" prefWidth="90.0" promptText="Cor" />
+                        <TextField fx:id="txtTernoTamanho" layoutX="120.0" layoutY="185.0" prefWidth="70.0" promptText="Tamanho" />
+                        <TextField fx:id="txtTernoPreco" layoutX="200.0" layoutY="185.0" prefWidth="80.0" promptText="Preço R$" />
+                        <Button layoutX="290.0" layoutY="185.0" mnemonicParsing="false" onAction="#onSalvarTerno" text="Cadastrar" />
+                        <Button layoutX="370.0" layoutY="185.0" mnemonicParsing="false" onAction="#onAtualizarTerno" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="230.0" style="-fx-font-weight: bold;" text="Banco de Dados (Clique em um item para editar ou excluir):" />
+                        <ListView fx:id="listImagem1" layoutX="20.0" layoutY="255.0" prefHeight="290.0" prefWidth="720.0" />
+                        <Button layoutX="20.0" layoutY="555.0" mnemonicParsing="false" onAction="#onDeletarSelecionadoImagem1" style="-fx-text-fill: red;" text="Excluir Registro Selecionado" />
+                        <Label fx:id="lblStatusImagem1" layoutX="210.0" layoutY="560.0" prefWidth="530.0" text="Pronto." />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+
+          <!-- TAB 2: IMAGEM 2 (Parque / Natureza) -->
+          <Tab text="Imagem 2: Parque">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="760.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="20.0" style="-fx-font-weight: bold;" text="1. Pessoa" />
+                        <TextField fx:id="txtPessoaSexo" layoutX="20.0" layoutY="45.0" prefWidth="90.0" promptText="Sexo" />
+                        <TextField fx:id="txtPessoaCabelo" layoutX="120.0" layoutY="45.0" prefWidth="100.0" promptText="Cor Cabelo" />
+                        <TextField fx:id="txtPessoaIdade" layoutX="230.0" layoutY="45.0" prefWidth="60.0" promptText="Idade" />
+                        <Button layoutX="300.0" layoutY="45.0" mnemonicParsing="false" onAction="#onSalvarPessoa" text="Cadastrar" />
+                        <Button layoutX="380.0" layoutY="45.0" mnemonicParsing="false" onAction="#onAtualizarPessoa" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="90.0" style="-fx-font-weight: bold;" text="2. Bicicleta" />
+                        <TextField fx:id="txtBikeCor" layoutX="20.0" layoutY="115.0" prefWidth="90.0" promptText="Cor" />
+                        <TextField fx:id="txtBikeMarca" layoutX="120.0" layoutY="115.0" prefWidth="100.0" promptText="Marca" />
+                        <TextField fx:id="txtBikePreco" layoutX="230.0" layoutY="115.0" prefWidth="80.0" promptText="Preço R$" />
+                        <Button layoutX="320.0" layoutY="115.0" mnemonicParsing="false" onAction="#onSalvarBicicleta" text="Cadastrar" />
+                        <Button layoutX="400.0" layoutY="115.0" mnemonicParsing="false" onAction="#onAtualizarBicicleta" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="160.0" style="-fx-font-weight: bold;" text="3. Árvore" />
+                        <TextField fx:id="txtArvoreEspecie" layoutX="20.0" layoutY="185.0" prefWidth="90.0" promptText="Espécie" />
+                        <TextField fx:id="txtArvoreFolha" layoutX="120.0" layoutY="185.0" prefWidth="100.0" promptText="Cor Folha" />
+                        <TextField fx:id="txtArvoreTamanho" layoutX="230.0" layoutY="185.0" prefWidth="80.0" promptText="Altura (m)" />
+                        <Button layoutX="320.0" layoutY="185.0" mnemonicParsing="false" onAction="#onSalvarArvore" text="Cadastrar" />
+                        <Button layoutX="400.0" layoutY="185.0" mnemonicParsing="false" onAction="#onAtualizarArvore" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="230.0" style="-fx-font-weight: bold;" text="Banco de Dados (Clique em um item para editar ou excluir):" />
+                        <ListView fx:id="listImagem2" layoutX="20.0" layoutY="255.0" prefHeight="290.0" prefWidth="720.0" />
+                        <Button layoutX="20.0" layoutY="555.0" mnemonicParsing="false" onAction="#onDeletarSelecionadoImagem2" style="-fx-text-fill: red;" text="Excluir Registro Selecionado" />
+                        <Label fx:id="lblStatusImagem2" layoutX="210.0" layoutY="560.0" prefWidth="530.0" text="Pronto." />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+
+          <!-- TAB 3: IMAGEM 3 (Cultura / Tribo / Máscara) -->
+          <Tab text="Imagem 3: Máscara e Tribo">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="760.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="20.0" style="-fx-font-weight: bold;" text="1. Máscara" />
+                        <TextField fx:id="txtMascaraCor" layoutX="20.0" layoutY="45.0" prefWidth="90.0" promptText="Cor" />
+                        <TextField fx:id="txtMascaraTamanho" layoutX="120.0" layoutY="45.0" prefWidth="90.0" promptText="Tamanho" />
+                        <TextField fx:id="txtMascaraFormato" layoutX="220.0" layoutY="45.0" prefWidth="90.0" promptText="Formato" />
+                        <Button layoutX="320.0" layoutY="45.0" mnemonicParsing="false" onAction="#onSalvarMascara" text="Cadastrar" />
+                        <Button layoutX="400.0" layoutY="45.0" mnemonicParsing="false" onAction="#onAtualizarMascara" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="90.0" style="-fx-font-weight: bold;" text="2. Tribo" />
+                        <TextField fx:id="txtTriboNome" layoutX="20.0" layoutY="115.0" prefWidth="90.0" promptText="Nome" />
+                        <TextField fx:id="txtTriboRegiao" layoutX="120.0" layoutY="115.0" prefWidth="100.0" promptText="Região" />
+                        <TextField fx:id="txtTriboLingua" layoutX="230.0" layoutY="115.0" prefWidth="90.0" promptText="Língua" />
+                        <Button layoutX="330.0" layoutY="115.0" mnemonicParsing="false" onAction="#onSalvarTribo" text="Cadastrar" />
+                        <Button layoutX="410.0" layoutY="115.0" mnemonicParsing="false" onAction="#onAtualizarTribo" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="160.0" style="-fx-font-weight: bold;" text="3. Artista" />
+                        <TextField fx:id="txtArtistaNome" layoutX="20.0" layoutY="185.0" prefWidth="90.0" promptText="Nome" />
+                        <TextField fx:id="txtArtistaNacionalidade" layoutX="120.0" layoutY="185.0" prefWidth="110.0" promptText="Nacionalidade" />
+                        <TextField fx:id="txtArtistaIdade" layoutX="240.0" layoutY="185.0" prefWidth="60.0" promptText="Idade" />
+                        <Button layoutX="310.0" layoutY="185.0" mnemonicParsing="false" onAction="#onSalvarArtista" text="Cadastrar" />
+                        <Button layoutX="390.0" layoutY="185.0" mnemonicParsing="false" onAction="#onAtualizarArtista" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="230.0" style="-fx-font-weight: bold;" text="Banco de Dados (Clique em um item para editar ou excluir):" />
+                        <ListView fx:id="listImagem3" layoutX="20.0" layoutY="255.0" prefHeight="290.0" prefWidth="720.0" />
+                        <Button layoutX="20.0" layoutY="555.0" mnemonicParsing="false" onAction="#onDeletarSelecionadoImagem3" style="-fx-text-fill: red;" text="Excluir Registro Selecionado" />
+                        <Label fx:id="lblStatusImagem3" layoutX="210.0" layoutY="560.0" prefWidth="530.0" text="Pronto." />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+
+          <!-- TAB 4: IMAGEM 4 (Mangá) -->
+          <Tab text="Imagem 4: Mangá">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="760.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="20.0" style="-fx-font-weight: bold;" text="1. Mangá" />
+                        <TextField fx:id="txtMangaTitulo" layoutX="20.0" layoutY="45.0" prefWidth="120.0" promptText="Título" />
+                        <TextField fx:id="txtMangaGenero" layoutX="150.0" layoutY="45.0" prefWidth="90.0" promptText="Gênero" />
+                        <TextField fx:id="txtMangaCaps" layoutX="250.0" layoutY="45.0" prefWidth="70.0" promptText="Capítulos" />
+                        <Button layoutX="330.0" layoutY="45.0" mnemonicParsing="false" onAction="#onSalvarManga" text="Cadastrar" />
+                        <Button layoutX="410.0" layoutY="45.0" mnemonicParsing="false" onAction="#onAtualizarManga" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="90.0" style="-fx-font-weight: bold;" text="2. Personagem" />
+                        <TextField fx:id="txtPersonagemNome" layoutX="20.0" layoutY="115.0" prefWidth="120.0" promptText="Nome" />
+                        <TextField fx:id="txtPersonagemIdade" layoutX="150.0" layoutY="115.0" prefWidth="60.0" promptText="Idade" />
+                        <TextField fx:id="txtPersonagemTipo" layoutX="220.0" layoutY="115.0" prefWidth="90.0" promptText="Tipo (ex: Ninja)" />
+                        <Button layoutX="320.0" layoutY="115.0" mnemonicParsing="false" onAction="#onSalvarPersonagem" text="Cadastrar" />
+                        <Button layoutX="400.0" layoutY="115.0" mnemonicParsing="false" onAction="#onAtualizarPersonagem" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="160.0" style="-fx-font-weight: bold;" text="3. Desenhista" />
+                        <TextField fx:id="txtDesenhistaNome" layoutX="20.0" layoutY="185.0" prefWidth="120.0" promptText="Nome" />
+                        <TextField fx:id="txtDesenhistaEsp" layoutX="150.0" layoutY="185.0" prefWidth="110.0" promptText="Especialidade" />
+                        <TextField fx:id="txtDesenhistaExp" layoutX="270.0" layoutY="185.0" prefWidth="60.0" promptText="Anos Exp" />
+                        <Button layoutX="340.0" layoutY="185.0" mnemonicParsing="false" onAction="#onSalvarDesenhista" text="Cadastrar" />
+                        <Button layoutX="420.0" layoutY="185.0" mnemonicParsing="false" onAction="#onAtualizarDesenhista" text="Salvar Edição" style="-fx-background-color: #e0f2fe; -fx-text-fill: #0369a1;" />
+
+                        <Label layoutX="20.0" layoutY="230.0" style="-fx-font-weight: bold;" text="Banco de Dados (Clique em um item para editar ou excluir):" />
+                        <ListView fx:id="listImagem4" layoutX="20.0" layoutY="255.0" prefHeight="290.0" prefWidth="720.0" />
+                        <Button layoutX="20.0" layoutY="555.0" mnemonicParsing="false" onAction="#onDeletarSelecionadoImagem4" style="-fx-text-fill: red;" text="Excluir Registro Selecionado" />
+                        <Label fx:id="lblStatusImagem4" layoutX="210.0" layoutY="560.0" prefWidth="530.0" text="Pronto." />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
